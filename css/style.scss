@@ -38,7 +38,7 @@ $bunge : 'Bungee', cursive;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 5px;
   }
   
   ::-webkit-scrollbar-track {
@@ -50,20 +50,76 @@ $bunge : 'Bungee', cursive;
     background: $yellow;
   }
 
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw;
+   
+
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes floating {
+    0% {
+        transform: scale(1) translateY(0px);
+    }
+    25% {
+        transform: scale(1.15) translateY(2px);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    75% {
+        transform: scale(1.04) ;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 
 
 .main{
     position: relative;
     overflow-x: hidden;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
 
    
-    min-height: 100px;
+    min-height: 100vh;
  
     background-color: $blue;
+    background: linear-gradient(-90deg, pink, rgb(94, 0, 226), $blue, rgb(103, 103, 248));
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+
+    
+
+    #canvas {
+      
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        z-index: 30;
+        background:none;
+        pointer-events: none;
+    }
 
     
 }
@@ -100,12 +156,13 @@ $bunge : 'Bungee', cursive;
     backdrop-filter: blur(10px);
    
     ul{
-        width: 50%;
+        width: 90%;
+        max-width: 720px;
         display: flex;
         justify-content: space-between;
 
         list-style: none;
-        font-size:medium;
+        font-size:13px;
         font-weight: bold;
         color: $white;
 
@@ -141,6 +198,9 @@ $bunge : 'Bungee', cursive;
         width: 100%;
         height: 70%;
         object-fit: contain;
+        pointer-events: none;
+        animation: floating .9s 1000ms ease-out infinite backwards;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
      
     }
     div{

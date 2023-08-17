@@ -8,54 +8,17 @@
   width: 100%;
   height: 100vh;
 }
-.dots {
-  width: 13.4px;
-  height: 13.4px;
-  border-radius: 50%;
-  background: #474bff;
-  color: #474bff;
-  clip-path: inset(-29.1px);
-  animation: dots-izls0vmd 2s infinite linear;
+.progress {
+   width: 300.8px;
+   height: 30.8px;
+   border-radius: 16.8px;
+   background: repeating-linear-gradient(135deg,#474bff 0 8.4px,rgba(71,75,255,0.75) 0 16.8px) left/0%   100% no-repeat,
+         repeating-linear-gradient(135deg,rgba(71,75,255,0.2) 0 8.4px,rgba(71,75,255,0.1) 0 16.8px) left/100% 100%;
+   animation: progress-p43u5e 2s infinite;
 }
 
-@keyframes dots-izls0vmd {
-  0% {
-     box-shadow: 0 0 0 0, 44.8px 0,-44.8px 0,0 44.8px,0 -44.8px;
-  }
-
-  10% {
-     box-shadow: 0 0 0 0, 13.4px 0,-44.8px 0,0 44.8px,0 -44.8px;
-  }
-
-  20% {
-     box-shadow: 0 0 0 4.5px, 0 0,-44.8px 0,0 44.8px,0 -44.8px;
-  }
-
-  30% {
-     box-shadow: 0 0 0 4.5px, 0 0,-13.4px 0,0 44.8px,0 -44.8px;
-  }
-
-  40% {
-     box-shadow: 0 0 0 9px, 0 0, 0 0,0 44.8px,0 -44.8px;
-  }
-
-  50% {
-     box-shadow: 0 0 0 9px, 0 0, 0 0,0 13.4px,0 -44.8px;
-  }
-
-  60% {
-     box-shadow: 0 0 0 13.4px, 0 0, 0 0,0 0,0 -44.8px;
-  }
-
-  70% {
-     box-shadow: 0 0 0 13.4px, 0 0, 0 0,0 0,0 -13.4px;
-  }
-
-  80% {
-     box-shadow: 0 0 0 17.9px, 0 0, 0 0,0 0,0 0;
-  }
-
-  90%, 100% {
-     box-shadow: 0 0 0 0, 44.8px 0,-44.8px 0,0 44.8px,0 -44.8px;
-  }
+@keyframes progress-p43u5e {
+   100% {
+      background-size: 100% 100%;
+   }
 }

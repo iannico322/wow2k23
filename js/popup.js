@@ -35,6 +35,20 @@ const observer = new IntersectionObserver((entries) => {
       $(this).css('transform', 'translate(' + x + 'px, ' + y + 'px) rotate(' + deg + 'deg)');
     });
   });
+
+
+  let menusOption = document.querySelector('.hidden-menus')
+  const menu = document.querySelector('#menu')
+
+  let ishow = false;
+
+  menu.addEventListener('click',()=>{
+    console.log("hi")
+
+    ishow? menusOption.style.display="none" : menusOption.style.display="flex";
+    ishow=!ishow
+   
+  })
   
 
 

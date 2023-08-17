@@ -39,13 +39,21 @@ const observer = new IntersectionObserver((entries) => {
 
   let menusOption = document.querySelector('.hidden-menus')
   const menu = document.querySelector('#menu')
+  const opt = document.querySelector('.opt')
 
   let ishow = false;
 
+
+ 
   menu.addEventListener('click',()=>{
     console.log("hi")
-
-    ishow? menusOption.style.display="none" : menusOption.style.display="flex";
+    if (ishow) {
+      menusOption.style.display="none";
+     menu.textContent= "menu"
+    }else{
+      menusOption.style.display="flex"; menu.textContent= "close"
+    }
+    
     ishow=!ishow
    
   })

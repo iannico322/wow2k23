@@ -1,3 +1,10 @@
+$(window).on("load", function () {
+  $(".loading").fadeOut(2000);
+
+  $(".main").fadein(2000);
+});
+
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -10,3 +17,24 @@ const observer = new IntersectionObserver((entries) => {
   
   const hiddenElements = document.querySelectorAll(".hidden");
   hiddenElements.forEach((el) => observer.observe(el));
+  
+
+  $(document).ready(function() {
+    var degrees = [0, 90, 180, 270];
+    $('.bg img').each(function(index) {
+      $(this).addClass('rotate-' + degrees[index % degrees.length]);
+    });
+  });
+
+  
+  $(document).ready(function() {
+    $('.bg img').each(function() {
+      var x = Math.random() * 50 - 25; // random x position
+      var y = Math.random() * 200 - 25; // random y position
+      var deg = Math.random() * 360; // random rotation degree
+      $(this).css('transform', 'translate(' + x + 'px, ' + y + 'px) rotate(' + deg + 'deg)');
+    });
+  });
+  
+
+

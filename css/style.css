@@ -1,14 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,100;1,300&display=swap");
 @keyframes floating {
   0% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
   50% {
-    transform: translateY(-30px);
+    transform: translateX(-50%) translateY(20px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
+}
+
+@keyframes floating_right {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(-30%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-30%) rotate(10deg);
+  }
+  100% {
+    transform: translateX(-30%) rotate(0deg);
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(30%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(30%) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(30%) rotate(0deg);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  top: -20px;
+  transition: 900ms;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: 900ms;
+  transition: 900ms;
+  top: 0px;
 }
 
 * {
@@ -50,24 +101,6 @@ body {
   }
 }
 
-@keyframes floating {
-  0% {
-    transform: scale(1) translateY(0px);
-  }
-  25% {
-    transform: scale(1.15) translateY(2px);
-  }
-  50% {
-    transform: scale(1.04);
-  }
-  75% {
-    transform: scale(1.04);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .main {
   position: relative;
   overflow-x: hidden;
@@ -76,8 +109,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: #2955CB;
-  background: linear-gradient(-90deg, pink, #5e00e2, #2955CB, #6767f8);
+  background-color: #a6dcf5;
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
@@ -89,21 +121,6 @@ body {
   z-index: 30;
   background: none;
   pointer-events: none;
-}
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  top: -20px;
-  transition: 900ms;
-}
-
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transition-delay: 900ms;
-  transition: 900ms;
-  top: 0px;
 }
 
 .nav {
@@ -120,82 +137,164 @@ body {
 }
 
 .nav ul {
-  width: 90%;
-  max-width: 720px;
+  width: 80%;
+  max-width: 1080px;
   display: flex;
   justify-content: space-between;
   list-style: none;
-  font-size: 13px;
-  font-weight: bold;
   color: #FFFFFF;
+  filter: drop-shadow(1px, 1px, 1px black);
+}
+
+.nav ul .active {
+  background-color: #FFFFFF;
+  color: #2955CB;
+  border-radius: 40px;
+  filter: drop-shadow(1px 5px 2px rgba(0, 0, 0, 0.105));
+  font-weight: 700;
 }
 
 .nav ul a {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
   text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #FFCD22;
+  font-weight: 900;
   padding: 10px 20px;
   cursor: pointer;
+  -webkit-text-stroke-width: .4px;
+  -webkit-text-stroke-color: #2F4B85;
 }
 
 .nav ul a:hover {
   background-color: #FFFFFF;
   color: #2955CB;
   border-radius: 40px;
+  filter: drop-shadow(1px 5px 2px rgba(0, 0, 0, 0.105));
+  font-weight: 700;
+}
+
+.monster {
+  z-index: 0;
+  height: 110vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  background-color: #a6dcf5;
+}
+
+.monster .left {
+  transform: translateX(-30%);
+  animation: left ease-in-out 10s infinite;
+}
+
+.monster .right {
+  transform: translateX(30%);
+  animation: right ease-in-out 10s infinite;
+}
+
+.monster img {
+  position: relative;
+  object-fit: contain;
+  height: 100%;
+  min-width: 200px;
 }
 
 .page1 {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
-  height: 70vh;
+  height: 90vh;
   width: 100%;
   overflow: hidden;
+  z-index: 2;
   gap: 20px;
 }
 
-.page1 img {
-  width: 100%;
-  height: 70%;
+.page1 .wow-logo {
+  z-index: 11;
+  width: 90%;
+  height: 60%;
   object-fit: contain;
   pointer-events: none;
-  animation: floating .9s 1000ms ease-out infinite backwards;
-  animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
-.page1 div {
+.page1 .text-con {
   width: 60%;
-  color: #FFFFFF;
+  margin-bottom: 100px;
+  color: #2F4B85;
 }
 
-.page1 div p {
-  font-size: large;
+.page1 .text-con p {
+  -webkit-text-stroke-width: .3px;
+  -webkit-text-stroke-color: #FFFFFF;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.221));
+}
+
+.page1 .clouds {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.page1 .clouds img {
+  object-fit: cover;
+  height: 90vh;
+  width: 200vw;
+  pointer-events: none;
+  opacity: 80%;
+  animation: floating 30s infinite ease-in-out;
 }
 
 .page2 {
-  overflow-x: hidden;
-  padding: 30px 0px;
   position: relative;
-  height: 100vh;
+  min-height: 100%;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 10;
+  padding-bottom: 100px;
 }
 
-.page2 .container {
+.page2 .page-2-container {
   height: 80%;
   width: 100%;
-  border-radius: 69px;
+  transform: translateY(-20px);
+  border-radius: 30px;
   background-color: #020B1E;
   color: #FFFFFF;
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
+  padding-bottom: 0px;
 }
 
-.page2 .container h1 {
+.page2 .page-2-container .bg {
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page2 .page-2-container .bg img {
+  height: 200px;
+}
+
+.page2 .page-2-container .title {
   position: relative;
   display: flex;
   align-self: center;
@@ -206,18 +305,55 @@ body {
   z-index: 10;
 }
 
-.page2 .container h1 span {
+.page2 .page-2-container .title span {
   font-size: 80px;
   font-family: "Bungee", cursive;
 }
 
-.page2 .container h1:after {
+.page2 .page-2-container .title:after {
   content: "REGISTER  NOW";
   -webkit-text-stroke: 30px #020B1E;
   color: #844733;
   position: absolute;
   left: 0;
   z-index: -1;
+}
+
+.page2 .page-2-container .doors {
+  transform: translateY(-10vh);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px 100px;
+  box-sizing: border-box;
+}
+
+.page2 .page-2-container .doors a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: #FFCD22;
+  font-weight: 800;
+  font-size: 30px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #020B1E;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.page2 .page-2-container .doors a img {
+  height: 400px;
+}
+
+.page2 .page-2-container .doors a img:hover {
+  filter: drop-shadow(2px 2px 10px #FFCD22);
 }
 
 .road {
@@ -279,7 +415,7 @@ body {
   height: 220px;
   width: 220px;
   background-color: #8F40CD;
-  border: #FFFFFF 5px solid;
+  border: #FFFFFF 10px solid;
   border-radius: 500px;
 }
 
@@ -290,7 +426,7 @@ body {
 }
 
 .road .day1 .container .text {
-  animation: floating infinite ease-in-out 3s;
+  animation: floating_right infinite ease-in-out 3s;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -300,19 +436,22 @@ body {
   background-color: #FFFFFF;
   min-height: 10px;
   min-width: 10%;
+  border: #8F40CD 10px solid;
 }
 
 .road .day1 .container .text:before {
   content: "";
+  z-index: -10;
   position: absolute;
-  left: -80px;
-  top: calc(50% - 20px);
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 80px solid #FFFFFF;
+  left: -100px;
+  top: calc(50% - 50px);
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 90px solid #FFFFFF;
 }
 
 .road .day1 .container .text h1 {
+  margin: 0;
   font-size: 50px;
   font-family: "Bungee", cursive;
   color: #2F4B85;
@@ -320,6 +459,7 @@ body {
 
 .road .day1 .container .text p {
   font-size: 20px;
+  font-weight: 700;
   font-family: "Poppins", sans-serif;
   color: #8F40CD;
 }
@@ -376,4 +516,29 @@ body {
   position: absolute;
   left: 0;
   z-index: -1;
+}
+
+@media (max-width: 1178px) {
+  .nav ul .active {
+    border-radius: 10px;
+  }
+  .nav ul a {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+  .nav ul a:hover {
+    border-radius: 10px;
+  }
+  .page1 .wow-logo {
+    width: 90%;
+    max-width: 790px;
+    height: 50%;
+    object-fit: contain;
+  }
+  .page1 .text-con p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.193));
+  }
 }

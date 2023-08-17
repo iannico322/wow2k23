@@ -5,25 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOW 2k23</title>
     <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
-
+    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <link rel="stylesheet" href="./css/style.css">
     <script defer src="./js/popup.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenLite.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
-    <link rel="stylesheet" href="./css/loader.css">
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    
+    
 
 </head>
 <body>
 
     <!-- git remote add origin https://github.com/iannico322/wow2k23.git -->
-
+    <div class="loading">
+        <div class="dots"></div>
+      </div>
     <div class="main" >
         <canvas id="canvas"></canvas>
         <div class="nav hidden">
             <ul>
-                <a href="#page1">HOME</a>
+                <a href="#page1" class="active"> HOME</a>
                 <a href="#page2">EXPLORE USTP</a>
                 <a href="#day1">ORGANIZATIONS</a>
                 <a href="#wowarc">ACADEMICS </a>
@@ -31,20 +46,74 @@
                 <a>CONTACTS US</a>
             </ul>
         </div>
-    
+        <div class="monster hidden">
+            <img src="./img/left-monster.png" class="left" alt="left-monster">
+            <img src="./img/right-monster.png"  class="right" alt="right-monster">
+
+        </div>
 
         <div class="hidden page1  " id="page1">
-            <img src="./img/WORD MARK 1.png" alt="">
 
-            <div>
+            
+
+            <div class="clouds">
+                <img src="./img/clouds.png" alt="clouds">
+
+            </div>
+            <img src="./img/WORD MARK 1.png" class="wow-logo" alt="">
+
+            <div class="text-con">
                 <p>WEEK OF WELCOME (WOW) is a three-day event to help the new students undergo a successful transition to the university. By joining the week of welcome you will be provided with helpful tips and information that will contribute to your overall success, so don’t forget to register below!</p>
             </div>
             
         </div>
 
         <div class="hidden page2 " id="page2">
-            <div class="container">
-                <h1>  <span style="color: #8F40CD;">R</span>
+            <div class="page-2-container">
+                <div class="bg">
+                    <img src="./img/2.png" alt="2">
+                    <img src="./img/3.png" alt="2">
+                    <img src="./img/4.png" alt="2">
+                    <img src="./img/5.png" alt="2">
+                    <img src="./img/6.png" alt="2">
+                    <img src="./img/7.png" alt="2">
+
+                    <img src="./img/8.png" alt="2">
+                    <img src="./img/9.png" alt="2">
+                    <img src="./img/10.png" alt="2">
+                    <img src="./img/11.png" alt="2">
+                    <img src="./img/12.png" alt="2">
+                    <img src="./img/15.png" alt="2">
+                    <img src="./img/14.png" alt="2">
+                    <img src="./img/2.png" alt="2">
+                    <img src="./img/11.png" alt="2">
+                    <img src="./img/12.png" alt="2">
+                    <img src="./img/15.png" alt="2">
+                    <img src="./img/14.png" alt="2">
+                    <img src="./img/2.png" alt="2">
+                    <img src="./img/3.png" alt="2">
+                    <img src="./img/4.png" alt="2">
+                    <img src="./img/5.png" alt="2">
+                    <img src="./img/6.png" alt="2">
+                    <img src="./img/7.png" alt="2">
+
+                    <img src="./img/8.png" alt="2">
+                    <img src="./img/9.png" alt="2">
+                    <img src="./img/10.png" alt="2">
+                    <img src="./img/11.png" alt="2">
+                    <img src="./img/12.png" alt="2">
+                    <img src="./img/15.png" alt="2">
+                    <img src="./img/14.png" alt="2">
+                    <img src="./img/8.png" alt="2">
+                    <img src="./img/9.png" alt="2">
+                    <img src="./img/10.png" alt="2">
+                    <img src="./img/11.png" alt="2">
+                    <img src="./img/12.png" alt="2">
+                    <img src="./img/15.png" alt="2">
+                    <img src="./img/14.png" alt="2">
+                </div>
+
+                <h1 class="title">  <span style="color: #8F40CD;">R</span>
                     <span style="color: #FF7E3B;">E</span>
                     <span style="color: #FFC7C0;">G</span>
                     <span style="color: #B12A41;">I</span>
@@ -55,8 +124,54 @@
                     &nbsp; 
                     <span style="color: #FFC7C0;">N</span>
                     <span style="color: #FFCD22;">O</span>
-                    <span style="color: #8F40CD;">W</span></h1>
+                    <span style="color: #8F40CD;">W</span>
+                </h1>
 
+                <div class="doors">
+                    
+
+
+                    <a href="#" target="_blank">
+                        <img src="./img/f.png" alt="alubijid">
+                        <p>alubujid</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./img/e.png" alt="e">
+                        <p>balubal</p>
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="./img/c.png" alt="c">
+                        <p>cagayan</p>
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="./img/a.png" alt="a">
+                        <p>claveria</p>
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="./img/g.png" alt="g">
+                        <p>jasaan</p>
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="./img/r.png" alt="r">
+                        <p>oroquieta</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./img/b.png" alt="b">
+                        <p>panaon</p>
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="./img/d.png" alt="d">
+                        <p>villanueva</p>
+                    </a>
+                    
+                    
+
+                </div>
             </div>
         </div>
 

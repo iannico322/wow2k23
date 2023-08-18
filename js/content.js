@@ -3,6 +3,7 @@ const content = {
       "GtL1huin9EE",
       "ikC4pdT9SSo",
       "GtL1huin9EE",
+      "ikC4pdT9SSo",
       "ikC4pdT9SSo"
     ],
     "major-sponsor":[

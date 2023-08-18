@@ -68,6 +68,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   }
   
+  checkScreenSizeAndRunCode()
 
   window.addEventListener("resize", checkScreenSizeAndRunCode);
 

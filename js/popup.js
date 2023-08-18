@@ -58,5 +58,17 @@ const observer = new IntersectionObserver((entries) => {
    
   })
   
+  let roadImg = document.querySelector('.road-img')
+  
+  function checkScreenSizeAndRunCode() {
+    if (window.innerWidth >= 0 && window.innerWidth <= 1178) {
+      roadImg.src = "./img/road-map-mobile-tab.png"
+    }else{
+      roadImg.src = "./img/road map.png"
+    }
+  }
+  
+
+  window.addEventListener("resize", checkScreenSizeAndRunCode);
 
 

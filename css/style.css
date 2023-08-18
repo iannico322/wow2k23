@@ -764,7 +764,7 @@ body {
   gap: 40px;
 }
 
-.wowarc .container .contents-wowarc iframe {
+.wowarc .container .contents-wowarc video {
   border-radius: 20px;
   width: 520px;
   background-color: white;
@@ -1289,7 +1289,7 @@ body {
     margin: 30px;
     gap: 40px;
   }
-  .wowarc .container .contents-wowarc iframe {
+  .wowarc .container .contents-wowarc video {
     border-radius: 20px;
     width: 520px;
     background-color: white;
@@ -1668,7 +1668,7 @@ body {
   .wowarc .container .contents-wowarc {
     transform: translateY(-10px);
   }
-  .wowarc .container .contents-wowarc iframe {
+  .wowarc .container .contents-wowarc video {
     border-radius: 20px;
     width: 320px;
     background-color: white;

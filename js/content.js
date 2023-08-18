@@ -23,7 +23,22 @@ const content = {
   const minorSponsorContainer = document.querySelector('.minor-content');
 
 
-content["wow-arc"].forEach(videoId => {
+  $(window).on("load", function () {
+    $(".loading").fadeOut(1000);
+  
+    $(".main").fadein(1000);
+    
+
+    
+  
+  
+    
+  });
+
+  
+
+  
+content["wow-arc"].map(videoId => {
     const iframe = document.createElement('iframe');
     iframe.src = `https://www.youtube.com/embed/${videoId}`;
     iframe.title = 'YouTube video player';
@@ -35,16 +50,18 @@ content["wow-arc"].forEach(videoId => {
   });
 
 
-  content["major-sponsor"].forEach(img_src => {
+  content["major-sponsor"].map(img_src => {
     const img = document.createElement('img');
     img.src = `${img_src}`;
     img.alt = `${img_src}`;
     majorSponsorContainer.appendChild(img);
   });
 
-  content["minor-sponsor"].forEach(img_src => {
+  content["minor-sponsor"].map(img_src => {
     const img = document.createElement('img');
     img.src = `${img_src}`;
     img.alt = `${img_src}`;
     minorSponsorContainer.appendChild(img);
   });
+
+
